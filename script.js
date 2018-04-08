@@ -1,0 +1,60 @@
+
+
+// Let's say we have an array
+const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+
+// and we want to make a copy of it.
+const team = players;
+
+console.log(players, team);
+
+const team2 = players.slice();
+
+// or create a new array and concat the old one in
+const team3 = [].concat(players);
+
+// or use the new ES6 Spread
+const team4 = [...players];
+team4[3] = 'heeee hawww';
+console.log(team4);
+
+const team5 = Array.from(players);
+
+// now when we update it, the original one isn't changed
+
+// The same thing goes for objects, let's say we have a person object
+
+// with Objects
+const person = {
+    name: 'Wes Bos',
+    age: 80
+};
+
+// and think we make a copy:
+// const captain = person;
+// captain.number = 99;
+
+// how do we take a copy instead?
+const cap2 = Object.assign({}, person, { number: 99, age: 12 });
+console.log(cap2);
+
+// We will hopefully soon see the object ...spread
+// const cap3 = {...person};
+
+
+const wes = {
+    name: 'Wes',
+    age: 100,
+    social: {
+        twitter: '@wesbos',
+        facebook: 'wesbos.developer'
+    }
+};
+
+console.clear();
+console.log(wes);
+
+const dev = Object.assign({}, wes);
+
+const dev2 = JSON.parse(JSON.stringify(wes));
+
